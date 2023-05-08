@@ -1,0 +1,78 @@
+{% extends 'emp_base.html' %}
+
+{% block main %}
+
+<div class="card-body" style="box-shadow:2px 1px 5px #ccc;">
+    <a href="{% url 'edit_education' %}" class="btn btn-primary float-right btn-sm">Update & Insert Education Details</a>
+    <h5 class="p-2 text-danger" style="border-bottom:2px solid orange;">Employee Education Background</h5>
+
+    <div class="container-fluid">
+        <table class="table table-bordered my-3">
+            <tr>
+                <th>Post Graduation <span class="text-primary">(course)</span></th>
+                <td>{{education.course_pg}}</td>
+            </tr>
+            <tr>
+                <th>Post Graduation <span class="text-primary">(College Name)</span></th>
+                <td>{{education.college_pg}}</td>
+            </tr>
+            <tr>
+                <th>Post Graduation <span class="text-primary">(Passing Year)</span></th>
+                <td>{{education.passing_year_pg}}</td>
+            </tr>
+            <tr>
+                <th>Post Graduation <span class="text-primary">(Percentage %)</span></th>
+                <td>{{education.percentage_pg}}</td>
+            </tr>
+            
+            <tr>
+                <th>Graduation <span class="text-danger">(course)</span></th>
+                <td>{{education.course_g}}</td>
+            </tr>
+            <tr>
+                <th>Graduation <span class="text-danger">(College Name)</span></th>
+                <td>{{education.college_g}}</td>
+            </tr>
+            <tr>
+                <th>Graduation <span class="text-danger">(Passing Year)</span></th>
+                <td>{{education.passing_year_g}}</td>
+            </tr>
+            <tr>
+                <th>Graduation <span class="text-danger">(Percentage %)</span></th>
+                <td>{{education.percentage_g}}</td>
+            </tr>
+
+            <tr>
+                <th>12th Class <span class="text-success">(Stream)</span></th>
+                <td>{{education.course_ss}}</td>
+            </tr>
+            <tr>
+                <th>12th Class <span class="text-success">(School Name & Board)</span></th>
+                <td>{{education.school_ss}}</td>
+            </tr>
+            <tr>
+                <th>12th Class <span class="text-success">(Passing Year)</span></th>
+                <td>{{education.passing_year_ss}}</td>
+            </tr>
+            <tr>
+                <th>12th Class Result <span class="text-success">(Percentage %)</span></th>
+                <td>{{education.percentage_ss}}</td>
+            </tr>
+
+            <tr>
+                <th>10th Class <span class="text-primary">(School Name)</span></th>
+                <td>{{education.school_hs}}</td>
+            </tr>
+            <tr>
+                <th>10th Class <span class="text-primary">(Passing Year)</span></th>
+                <td>{{education.passing_year_hs}}</td>
+            </tr>
+            <tr>
+                <th>10th Class Result <span class="text-primary">(Percentage %)</span></th>
+                <td>{{education.percentage_hs}}</td>
+            </tr>
+        </table>
+    </div>
+</div>    
+
+{% endblock main %}

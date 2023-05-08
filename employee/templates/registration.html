@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card shadow m-5">
+    <div class="card-body">
+        <h5 class="p-2 text-danger" style="border-bottom:2px solid orange;">Create an Account</h5>
+
+        <div class="container-fluid">
+            <form action="" method="post" name="signup">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">First Name</label>
+                            <input type="text" name="fname" placeholder="Enter first Name" class="form-control" pattern="[A-Za-Z]+" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Last Name</label>
+                            <input type="text" name="lname" placeholder="Enter Last Name" class="form-control" pattern="[A-Z a-Z]+" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Employee Code</label>
+                            <input type="text" name="empcode" placeholder="Enter Employee code" class="form-control" pattern="[0-9]+" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Employee ID</label>
+                            <input type="email" name="email" placeholder="Enter Email Id" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Password</label>
+                            <input type="password" name="pwd" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Confirm Password</label>
+                            <input type="password" name="cpwd" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-primary px-3">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% comment %} {% if error == "no" %}
+<script>
+    alert('Signup successfully')
+    window.location = ('{% url 'emp_login' %}');
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert('Something went wrong ! Try again...')
+</script>
+{% endif %} {% endcomment %}
+{% endblock content %}

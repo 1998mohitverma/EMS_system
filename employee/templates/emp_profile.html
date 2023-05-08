@@ -1,0 +1,86 @@
+{% extends 'emp_base.html' %}
+
+{% block main %}
+
+<div class="card shadow m-3">
+    <div class="card-body" style="box-shadow:1px 1px 2px 3px #ddd;">
+        <h5 class="p-2 text-danger" style="border-bottom:2px solid orange;">Create an Account</h5>
+
+        <div class="container-fluid">
+            <form action="" method="post" name="signup">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">First Name</label>
+                            <input type="text" name="fname" value="{{employee.user.first_name}}" placeholder="Enter first Name" class="form-control" pattern="[A-Za-Z]+" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Last Name</label>
+                            <input type="text" name="lname" value="{{employee.user.last_name}}" placeholder="Enter Last Name" class="form-control" pattern="[A-Z a-Z]+" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Employee Code</label>
+                            <input type="text" name="empcode" value="{{employee.empcode}}" placeholder="Enter Employee code" class="form-control" pattern="[0-9]+" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Employee ID</label>
+                            <input type="email" name="email" value="{{employee.user.username}}" placeholder="Enter Email Id" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Employee Department</label>
+                            <input type="text" value="{{employee.empdept}}" name="department" class="form-control" placeholder="Department">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Employee Designation</label>
+                            <input type="text" name="designation" value="{{employee.designation}}" class="form-control" placeholder="Designation">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Primary Contact</label>
+                            <input type="text" name="pcontact" value="{{employee.pcontact}}" class="form-control" placeholder="Mobile Number">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Secondary Contact</label>
+                            <input type="text" name="scontact" value="{{employee.scontact}}" class="form-control" placeholder="Secondary Mobile Number">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Joining Date [{{employee.joiningdate}}]</label>
+                            <input type="date" name="jdate" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Gender [{{employee.gender}}]</label>
+                            <select name="gender" class="form-control">
+                                <option value="None">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-primary px-3">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock main %}

@@ -1,0 +1,82 @@
+{% extends 'emp_base.html' %}
+
+{% block main %}
+
+<div class="card-body" style="box-shadow:2px 1px 5px #ccc;">
+    <a href="{% url 'emp_education' %}" class="btn btn-primary float-right btn-sm">View My Education Details</a>
+    <h5 class="p-2 text-danger" style="border-bottom:2px solid orange;">Employee Education Background</h5>
+
+    <div class="container-fluid">
+        <form action="" method="post">
+            {% csrf_token %}
+            <table class="table table-bordered my-3">
+                <tr>
+                    <th>Post Graduation <span class="text-primary">(course)</span></th>
+                    <td><input type="text" name="pg_course" class="form-control" value="{{education.course_pg}}"></input></td>
+                </tr>
+                <tr>
+                    <th>Post Graduation <span class="text-primary">(College Name)</span></th>
+                    <td><input type="text" name="pg_college_name" class="form-control" value="{{education.college_pg}}"></input></td>
+                </tr>
+                <tr>
+                    <th>Post Graduation <span class="text-primary">(Passing Year)</span></th>
+                    <td><input type="text" name="pg_passing_yr" class="form-control" value="{{education.passing_year_pg}}"></input></td>
+                </tr>
+                <tr>
+                    <th>Post Graduation <span class="text-primary">(Percentage %)</span></th>
+                    <td><input type="text" name="pg_percentage" class="form-control" value="{{education.percentage_pg}}"></input></td>
+                </tr>
+                
+                <tr>
+                    <th>Graduation <span class="text-danger">(course)</span></th>
+                    <td><input type="text" name="g_course" class="form-control" value="{{education.course_g}}"></input></td>
+                </tr>
+                <tr>
+                    <th>Graduation <span class="text-danger">(College Name)</span></th>
+                    <td><input type="text" name="g_college_name" class="form-control" value="{{education.college_g}}"></input></td>
+                </tr>
+                <tr>
+                    <th>Graduation <span class="text-danger">(Passing Year)</span></th>
+                    <td><input type="text" name="g_passing_yr" class="form-control" value="{{education.passing_year_g}}"></input></td>
+                </tr>
+                <tr>
+                    <th>Graduation <span class="text-danger">(Percentage %)</span></th>
+                    <td><input type="text" name="g_percentage" class="form-control" value="{{education.percentage_g}}"></input></td>
+                </tr>
+
+                <tr>
+                    <th>12th Class <span class="text-success">(Stream)</span></th>
+                    <td><input type="text" name="course_12" class="form-control" value="{{education.course_ss}}"></input></td>
+                </tr>
+                <tr>
+                    <th>12th Class <span class="text-success">(School Name & Board)</span></th>
+                    <td><input type="text" name="school_12" class="form-control" value="{{education.school_ss}}"></input></td>
+                </tr>
+                <tr>
+                    <th>12th Class <span class="text-success">(Passing Year)</span></th>
+                    <td><input type="text" name="passing_yr_12" class="form-control" value="{{education.passing_year_ss}}"></input></td>
+                </tr>
+                <tr>
+                    <th>12th Class Result <span class="text-success">(Percentage %)</span></th>
+                    <td><input type="text" name="percentage_12" class="form-control" value="{{education.percentage_ss}}"></input></td>
+                </tr>
+
+                <tr>
+                    <th>10th Class <span class="text-primary">(School Name)</span></th>
+                    <td><input type="text" name="school_10" class="form-control" value="{{education.school_hs}}"></input></td>
+                </tr>
+                <tr>
+                    <th>10th Class <span class="text-primary">(Passing Year)</span></th>
+                    <td><input type="text" name="passing_yr_10" class="form-control" value="{{education.passing_year_hs}}"></input></td>
+                </tr>
+                <tr>
+                    <th>10th Class Result <span class="text-primary">(Percentage %)</span></th>
+                    <td><input type="text" name="percentage_10" class="form-control" value="{{education.percentage_hs}}"></input></td>
+                </tr>
+            </table>
+            <center><input type="submit" value="Submit" class="btn btn-success px-4"></center>
+        </form>
+    </div>
+</div>    
+
+{% endblock main %}
